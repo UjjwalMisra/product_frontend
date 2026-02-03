@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEase</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="logo">ShopEase</div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <button onclick="searchProduct()">Search</button>
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Login</a>
+        <a href="#">Cart 🛒</a>
+    </div>
+</nav>
+
+
+<!-- ===== CATEGORIES ===== -->
+<section class="categories">
+    <button>Electronics</button>
+    <button>Fashion</button>
+    <button>Home</button>
+    <button>Books</button>
+    <button>Grocery</button>
+</section>
+
+
+<!-- ===== HERO BANNER ===== -->
+<section class="hero">
+    <h1>Simple Shopping. Better Experience.</h1>
+    <p>Discover products at best prices</p>
+</section>
+
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="productContainer">
+    <!-- JS will inject product cards here -->
+</section>
+
+
+<script src="app.js"></script>
+</body>
+</html>
