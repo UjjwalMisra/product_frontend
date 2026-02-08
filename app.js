@@ -1,10 +1,7 @@
 const API_URL = "http://localhost:8080/products";
 const ORDER_URL = "http://localhost:8080/orders";
 
-
-/* ===============================
-   LOAD PRODUCTS
-================================ */
+/* LOAD PRODUCTS */
 async function loadProducts() {
     try {
         const res = await fetch(API_URL);
@@ -21,6 +18,16 @@ async function loadProducts() {
                     <h3>${p.name}</h3>
                     <div class="price">₹ ${p.price}</div>
 
+                    <div class="qty-box">
+                        Qty:
+                        <input 
+                            type="number" 
+                            id="qty-${p.pid}" 
+                            min="1" 
+                            value="1"
+                        />
+                    </div>
+
                     <button class="buy"
                         onclick="buyProduct(${p.pid})">
                         Buy Now
@@ -32,18 +39,14 @@ async function loadProducts() {
         });
 
     } catch (err) {
-        console.error("Load products error:", err);
-        alert("Failed to load products");
+        console.error("Load error:", err);
     }
 }
 
-
-/* ===============================
-   PLACE ORDER
-================================ */
+/* PLACE ORDER */
 async function buyProduct(productId) {
 
-    console.log("Sending productId:", productId); // debug
+    const quantity = document.getElementById(`qty-${productId}`).value;
 
     try {
         const res = await fetch(ORDER_URL, {
@@ -53,15 +56,13 @@ async function buyProduct(productId) {
             },
             body: JSON.stringify({
                 pId: productId,
-                quantity: 1
+                quantity: parseInt(quantity)
             })
         });
 
         const msg = await res.text();
-
         alert(msg);
 
-        // reload products after order (optional)
         loadProducts();
 
     } catch (err) {
@@ -70,17 +71,10 @@ async function buyProduct(productId) {
     }
 }
 
+/* SEARCH (optional) */
+// function searchProduct() {
+//     const keyword = document.getElementById("searchInput").value;
+//     alert("Search: " + keyword);
+// }
 
-/* ===============================
-   SEARCH
-================================ */
-function searchProduct() {
-    const keyword = document.getElementById("searchInput").value;
-    alert("Search: " + keyword);
-}
-
-
-/* ===============================
-   START APP
-================================ */
 loadProducts();

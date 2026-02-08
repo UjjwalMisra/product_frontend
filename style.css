@@ -10,11 +10,9 @@ body {
     color: #333;
 }
 
-/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 15px 40px;
     background: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -26,54 +24,13 @@ body {
     color: #4f46e5;
 }
 
-.search-box input {
-    padding: 8px;
-    width: 250px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-.search-box button {
-    padding: 8px 14px;
-    border: none;
-    background: #4f46e5;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.nav-links a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
-}
-
-/* CATEGORIES */
-.categories {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 15px;
-    background: #ffffff;
-}
-
-.categories button {
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: none;
-    background: #eef2ff;
-    cursor: pointer;
-}
-
-/* HERO */
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 50px;
     background: linear-gradient(135deg, #4f46e5, #818cf8);
     color: white;
 }
 
-/* PRODUCTS GRID */
 .products {
     padding: 40px;
     display: grid;
@@ -81,30 +38,32 @@ body {
     gap: 20px;
 }
 
-/* CARD */
 .card {
     background: white;
     border-radius: 14px;
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
 }
 
 .card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .price {
     color: #4f46e5;
     font-weight: 600;
-    margin-top: 5px;
+    margin: 8px 0;
+}
+
+.qty-box {
+    margin-top: 10px;
+}
+
+.qty-box input {
+    width: 60px;
+    padding: 5px;
 }
 
 button.buy {
@@ -117,4 +76,3 @@ button.buy {
     color: white;
     cursor: pointer;
 }
-
